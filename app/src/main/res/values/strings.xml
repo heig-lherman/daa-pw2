@@ -1,8 +1,11 @@
 <resources>
     <string name="app_name">Labo 2</string>
-    <string name="welcome">Bienvenue</string>
     <string name="log_in">Log-in</string>
     <string name="username">Username</string>
-    <string name="edit">EDITER</string>
-    <string name="msg">, veuillez entrez votre nom</string>
+
+    <string name="edit_btn_label">Editer</string>
+    <string name="save_btn_label">Sauver</string>
+
+    <string name="welcome_empty">Bienvenue, veuillez entrer votre nom</string>
+    <string name="welcome_with_username">Bienvenue %1$s !</string>
 </resources>

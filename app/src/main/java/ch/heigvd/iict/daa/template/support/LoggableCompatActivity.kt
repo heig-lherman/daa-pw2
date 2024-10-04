@@ -5,6 +5,8 @@ import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 
 /**
+ * Support activity that logs the lifecycle of the activity
+ *
  * @author Emilie Bressoud
  * @author Loïc Herman
  * @author Sacha Butty

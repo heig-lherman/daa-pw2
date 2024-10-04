@@ -1,10 +1,34 @@
 package ch.heigvd.iict.daa.template
 
+import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 
+/**
+ * Main activity for our application, which handles redirecting the users to the different
+ * parts of the assignment.
+ *
+ * @author Emilie Bressoud
+ * @author Loïc Herman
+ * @author Sacha Butty
+ */
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var buttonPart1 : Button
+    private lateinit var buttonPart2 : Button
+    private lateinit var buttonPart3 : Button
+
+    private val part1Activity = Intent(this, WelcomeActivity::class.java)
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        buttonPart1 = findViewById(R.id.part1_button)
+        buttonPart2 = findViewById(R.id.part2_button)
+        buttonPart3 = findViewById(R.id.part3_button)
+
+        buttonPart1.setOnClickListener { startActivity(part1Activity) }
     }
 }

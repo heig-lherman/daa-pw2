@@ -7,6 +7,8 @@ import ch.heigvd.iict.daa.template.contract.UsernameInputContract
 import ch.heigvd.iict.daa.template.support.LoggableCompatActivity
 
 /**
+ * Activity for part 1 of the assignment, which handles the logic for the welcome screen.
+ *
  * @author Emilie Bressoud
  * @author Loïc Herman
  * @author Sacha Butty
@@ -22,7 +24,7 @@ class WelcomeActivity : LoggableCompatActivity() {
         const val STATE_KEY_USERNAME = "@welcome/username"
     }
 
-    private val editButtonOnClickListener = registerForActivityResult(UsernameInputContract()) {
+    private val editActivityIntent = registerForActivityResult(UsernameInputContract()) {
         username = it
         updateWelcomeLabel()
     }
@@ -37,12 +39,18 @@ class WelcomeActivity : LoggableCompatActivity() {
         username = savedInstanceState?.getString(STATE_KEY_USERNAME)
         updateWelcomeLabel()
 
-        editButton.setOnClickListener { editButtonOnClickListener.launch(username) }
+        editButton.setOnClickListener { editActivityIntent.launch(username) }
     }
 
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
         outState.putString(STATE_KEY_USERNAME, username)
+    }
+
+    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
+        super.onRestoreInstanceState(savedInstanceState)
+        username = savedInstanceState.getString(STATE_KEY_USERNAME)
+        updateWelcomeLabel()
     }
 
     private fun updateWelcomeLabel() {

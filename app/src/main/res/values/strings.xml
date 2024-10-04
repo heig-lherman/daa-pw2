@@ -6,6 +6,10 @@
     <string name="edit_btn_label">Editer</string>
     <string name="save_btn_label">Sauver</string>
 
+    <string name="part1_btn_label">Partie 1</string>
+    <string name="part2_btn_label">Partie 2</string>
+    <string name="part3_btn_label">Partie 3</string>
+
     <string name="welcome_empty">Bienvenue, veuillez entrer votre nom</string>
     <string name="welcome_with_username">Bienvenue %1$s !</string>
 </resources>

@@ -6,6 +6,14 @@ import android.widget.Button
 import android.widget.EditText
 import ch.heigvd.iict.daa.template.support.LoggableCompatActivity
 
+/**
+ * Activity for part 1 of the assignment, which handles the input logic for the username
+ * to mention on the welcome screen. It is called through a contract from the [WelcomeActivity].
+ *
+ * @author Emilie Bressoud
+ * @author Loïc Herman
+ * @author Sacha Butty
+ */
 class InputNameActivity : LoggableCompatActivity() {
 
     private lateinit var usernameInput: EditText

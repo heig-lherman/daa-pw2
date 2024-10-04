@@ -19,5 +19,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".WelcomeActivity" android:exported="false"/>
+        <activity android:name=".InputNameActivity" android:exported="false"/>
+        <activity android:name=".MainActivityFragment1" android:exported="false"/>
     </application>
 </manifest>

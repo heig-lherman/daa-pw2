@@ -1,4 +1,4 @@
-package ch.heigvd.iict.and.labo2.fragments
+package ch.heigvd.iict.daa.template.fragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
-import ch.heigvd.iict.and.labo2.R
+import ch.heigvd.iict.daa.template.R
 
 private const val ARG_COUNTER = "param_counter"
 

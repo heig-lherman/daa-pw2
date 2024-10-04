@@ -19,8 +19,6 @@ class MainActivity : AppCompatActivity() {
     private lateinit var buttonPart2 : Button
     private lateinit var buttonPart3 : Button
 
-    private val part1Activity = Intent(this, WelcomeActivity::class.java)
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -29,6 +27,7 @@ class MainActivity : AppCompatActivity() {
         buttonPart2 = findViewById(R.id.part2_button)
         buttonPart3 = findViewById(R.id.part3_button)
 
-        buttonPart1.setOnClickListener { startActivity(part1Activity) }
+        buttonPart1.setOnClickListener { startActivity(Intent(this@MainActivity, WelcomeActivity::class.java)) }
+        buttonPart2.setOnClickListener { startActivity(Intent(this@MainActivity, MainActivityFragment1::class.java)) }
     }
 }

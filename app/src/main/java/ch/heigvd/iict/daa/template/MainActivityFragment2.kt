@@ -34,8 +34,12 @@ class MainActivityFragment2 : AppCompatActivity() {
         nextStep()
 
     }
+
     private fun back() {
-        supportFragmentManager.popBackStack()
+        if (supportFragmentManager.backStackEntryCount > 0)
+            supportFragmentManager.popBackStack()
+        else
+            finish()
     }
 
     private fun forward() {
@@ -47,7 +51,7 @@ class MainActivityFragment2 : AppCompatActivity() {
     }
 
     private fun nextStep() {
-        val currentStep = supportFragmentManager.fragments.size
+        val currentStep = supportFragmentManager.backStackEntryCount
         // Create a new fragment and add it to the activity
         supportFragmentManager.beginTransaction()
             .replace(R.id.fragment_view_step, StepFragment.newInstance(currentStep))

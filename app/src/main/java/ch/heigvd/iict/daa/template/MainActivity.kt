@@ -29,5 +29,6 @@ class MainActivity : AppCompatActivity() {
 
         buttonPart1.setOnClickListener { startActivity(Intent(this@MainActivity, WelcomeActivity::class.java)) }
         buttonPart2.setOnClickListener { startActivity(Intent(this@MainActivity, MainActivityFragment1::class.java)) }
+        buttonPart3.setOnClickListener { startActivity(Intent(this@MainActivity, MainActivityFragment2::class.java)) }
     }
 }

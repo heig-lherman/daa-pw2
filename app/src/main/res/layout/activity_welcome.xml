@@ -23,7 +23,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="@dimen/item_sep"
-        android:drawableLeft="@drawable/ic_solar_edit"
+        app:icon="@drawable/ic_solar_edit"
         android:text="@string/edit_btn_label"
         android:textAllCaps="true"
         app:layout_constraintBottom_toBottomOf="parent"

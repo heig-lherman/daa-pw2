@@ -15,7 +15,7 @@ import ch.heigvd.iict.daa.template.fragment.StepFragment
 class MainActivityFragment2 : AppCompatActivity() {
     private lateinit var nextButton: Button
     private lateinit var backButton: Button
-    private lateinit var cancelButton: Button
+    private lateinit var closeButton: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,11 +24,11 @@ class MainActivityFragment2 : AppCompatActivity() {
 
         nextButton = findViewById(R.id.next_button)
         backButton = findViewById(R.id.back_button)
-        cancelButton = findViewById(R.id.close_button)
+        closeButton = findViewById(R.id.close_button)
 
         nextButton.setOnClickListener { forward() }
         backButton.setOnClickListener { back() }
-        cancelButton.setOnClickListener { close() }
+        closeButton.setOnClickListener { close() }
 
         // Add the first fragment
         nextStep()

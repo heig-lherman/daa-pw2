@@ -36,10 +36,12 @@ class MainActivityFragment2 : AppCompatActivity() {
     }
 
     private fun back() {
-        if (supportFragmentManager.backStackEntryCount > 0)
-            supportFragmentManager.popBackStack()
-        else
+        if(supportFragmentManager.backStackEntryCount == 1)
             finish()
+        else
+            supportFragmentManager.popBackStack()
+
+
     }
 
     private fun forward() {

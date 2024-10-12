@@ -30,8 +30,9 @@ class MainActivityFragment2 : AppCompatActivity() {
         backButton.setOnClickListener { back() }
         closeButton.setOnClickListener { close() }
 
-        // Add the first fragment
-        nextStep()
+        // Add the first fragment if it's the first time the activity is created
+        if(savedInstanceState == null)
+            nextStep()
 
     }
 
@@ -40,7 +41,6 @@ class MainActivityFragment2 : AppCompatActivity() {
             finish()
         else
             supportFragmentManager.popBackStack()
-
 
     }
 

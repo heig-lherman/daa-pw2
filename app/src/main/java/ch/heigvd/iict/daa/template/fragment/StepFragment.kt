@@ -16,9 +16,6 @@ class StepFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            step = it.getInt(ARG_STEP)
-        }
     }
 
     override fun onCreateView(
@@ -37,7 +34,7 @@ class StepFragment : Fragment() {
         }
         super.onViewCreated(view, savedInstanceState)
         val stepTv = view.findViewById<TextView>(R.id.f_step)
-        stepTv.text = "Step $step"
+        stepTv.text = getString(R.string.step_label, step)
 
     }
 

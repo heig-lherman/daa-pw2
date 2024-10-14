@@ -28,15 +28,10 @@ class MainActivityFragment2 : AppCompatActivity() {
         nextButton.setOnClickListener { forward() }
         backButton.setOnClickListener { back() }
         closeButton.setOnClickListener { close() }
-
-        // Add the first fragment if it's the first time the activity is created
-        if(savedInstanceState == null) {
-            nextStep()
-        }
     }
 
     private fun back() {
-        if (supportFragmentManager.backStackEntryCount > 1) {
+        if (supportFragmentManager.backStackEntryCount > 0) {
             supportFragmentManager.popBackStack()
         } else {
             finish()
@@ -52,11 +47,11 @@ class MainActivityFragment2 : AppCompatActivity() {
     }
 
     private fun nextStep() {
-        val currentStep = supportFragmentManager.backStackEntryCount
+        val nextStep = supportFragmentManager.backStackEntryCount + 1
         // Create a new fragment and add it to the activity
         supportFragmentManager.beginTransaction()
-            .replace(R.id.fragment_view_step, StepFragment.newInstance(currentStep))
-            .addToBackStack("step $currentStep")
+            .replace(R.id.fragment_view_step, StepFragment.newInstance(nextStep))
+            .addToBackStack("step $nextStep")
             .commit()
     }
 }

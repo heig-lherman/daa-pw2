@@ -21,7 +21,6 @@ class MainActivityFragment2 : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_fragment2)
 
-
         nextButton = findViewById(R.id.next_button)
         backButton = findViewById(R.id.back_button)
         closeButton = findViewById(R.id.close_button)
@@ -31,17 +30,17 @@ class MainActivityFragment2 : AppCompatActivity() {
         closeButton.setOnClickListener { close() }
 
         // Add the first fragment if it's the first time the activity is created
-        if(savedInstanceState == null)
+        if(savedInstanceState == null) {
             nextStep()
-
+        }
     }
 
     private fun back() {
-        if(supportFragmentManager.backStackEntryCount == 1)
-            finish()
-        else
+        if (supportFragmentManager.backStackEntryCount > 1) {
             supportFragmentManager.popBackStack()
-
+        } else {
+            finish()
+        }
     }
 
     private fun forward() {
@@ -57,7 +56,7 @@ class MainActivityFragment2 : AppCompatActivity() {
         // Create a new fragment and add it to the activity
         supportFragmentManager.beginTransaction()
             .replace(R.id.fragment_view_step, StepFragment.newInstance(currentStep))
-            .addToBackStack(null)
+            .addToBackStack("step $currentStep")
             .commit()
     }
 }
